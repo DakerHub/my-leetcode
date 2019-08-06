@@ -1,0 +1,26 @@
+{
+  "name": "my-leetcode",
+  "version": "1.0.0",
+  "description": "leetcode解题记录",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tony-cn/my-leetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Daker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tony-cn/my-leetcode/issues"
+  },
+  "homepage": "https://github.com/tony-cn/my-leetcode#readme"
+}
