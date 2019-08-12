@@ -6,9 +6,12 @@
   "dependencies": {
     "jest": "^24.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "doc": "jsdoc -c jsdoc.conf.js"
   },
   "repository": {
     "type": "git",
