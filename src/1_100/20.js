@@ -8,6 +8,10 @@
 */
 
 /**
+ * 思路：只循环一次，像剥洋葱一样，栈顶字符和下一个字符凑不成一对，
+ * 就将这个字符推入栈中，否则将栈顶字符推出，表示一对成功凑成。
+ * 最后看栈是否为空，不为空表示还有没凑对的
+ * @tag 栈
  * @param {string} s
  * @return {boolean}
  */
@@ -25,6 +29,7 @@ var isValid = function (s) {
     }
 
     if (!stack.length && [')', '}', ']'].includes(char)) {
+      // 早返回
       return false;
     }
 
