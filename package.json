@@ -1,0 +1,17 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "记录leetcode之路",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Daker",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
