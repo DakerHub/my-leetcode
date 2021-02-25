@@ -23,7 +23,74 @@
 */
 
 /**
+ * 思路：
+ * 1. 先将字符串按照'/'切割
+ * 2. 将切割的数组从头开始入栈
+ * 3. 遇到'..'时出栈
+ * 4. 空字符串和'.'不作处理
+ *
+ * 时间复杂度O(n)
+ * 空间复杂度O(n)
  * @param {string} path
  * @return {string}
  */
-var simplifyPath = function (path) {};
+var simplifyPath = function (path) {
+  let word = '';
+  const stack = [];
+  for (let i = 0; i < path.length; i++) {
+    const char = path[i];
+    if (char === '/') {
+      if (word) {
+        stack.push(word);
+        word = '';
+      }
+
+      continue;
+    }
+
+    word += char;
+  }
+  stack.push(word);
+
+  const stack2 = [];
+  while (stack.length) {
+    bottom = stack.shift();
+    if (bottom === '.' || !bottom) {
+      continue;
+    }
+
+    if (bottom === '..') {
+      stack2.pop();
+    } else {
+      stack2.push(bottom);
+    }
+  }
+
+  return '/' + stack2.join('/');
+};
+
+/**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath2 = function (path) {
+  stack = path.split(/\/+/g);
+
+  const stack2 = [];
+  while (stack.length) {
+    bottom = stack.shift();
+    if (bottom === '.' || !bottom) {
+      continue;
+    }
+
+    if (bottom === '..') {
+      stack2.pop();
+    } else {
+      stack2.push(bottom);
+    }
+  }
+
+  return '/' + stack2.join('/');
+};
+
+module.exports = { simplifyPath, simplifyPath2 };
