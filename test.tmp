@@ -1,0 +1,8 @@
+const {fn} = require('./')
+const { testMultiFn } = require('./../../util/test');
+
+const fns = [fn]
+
+test('', () => {
+  expect(testMultiFn(fns, '')).toBe('');
+});
