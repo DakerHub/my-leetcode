@@ -9,9 +9,28 @@
 */
 
 /**
+ * 滑动窗口法 O(n)
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {};
+var lengthOfLongestSubstring = function (s) {
+  let l = 0,
+    r = 0,
+    max = 0;
+  const map = new Map();
+
+  while (r < s.length) {
+    const ix = map.get(s[r]);
+    if (ix !== undefined && ix >= l) {
+      l = ix + 1;
+    }
+
+    map.set(s[r], r);
+    max = Math.max(max, r - l + 1);
+    r++;
+  }
+
+  return max;
+};
 
 module.exports = { lengthOfLongestSubstring };
