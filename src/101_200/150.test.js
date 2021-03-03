@@ -6,6 +6,9 @@ const fns = [evalRPN];
 test('["2", "1", "+", "3", "*"] 结果 9', () => {
   expect(testMultiFn(fns, ['2', '1', '+', '3', '*'])).toBe(9);
 });
+test('["2", "1", "-"] 结果 1', () => {
+  expect(testMultiFn(fns, ['2', '1', '-'])).toBe(1);
+});
 test('["4", "13", "5", "/", "+"] 结果 6', () => {
   expect(testMultiFn(fns, ['4', '13', '5', '/', '+'])).toBe(6);
 });

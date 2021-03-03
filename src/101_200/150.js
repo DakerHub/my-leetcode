@@ -29,6 +29,34 @@
  * @param {string[]} tokens
  * @return {number}
  */
-var evalRPN = function (tokens) {};
+var evalRPN = function (tokens) {
+  const stack = [];
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+    if (!['+', '-', '*', '/'].includes(token)) {
+      stack.push(Number.parseInt(token));
+      continue;
+    }
+
+    const n1 = stack.pop();
+    const n2 = stack.pop();
+    switch (token) {
+      case '*':
+        stack.push(n1 * n2);
+        break;
+      case '+':
+        stack.push(n1 + n2);
+        break;
+      case '-':
+        stack.push(n2 - n1);
+        break;
+      case '/':
+        stack.push(Number.parseInt(n2 / n1));
+        break;
+    }
+  }
+
+  return stack.pop();
+};
 
 module.exports = { evalRPN };
