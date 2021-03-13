@@ -34,6 +34,10 @@ function toLinkedList(vals) {
 }
 
 function toString(head) {
+  if (!head) {
+    return '';
+  }
+
   const keys = [];
   while (head !== null) {
     keys.push(head.val);
