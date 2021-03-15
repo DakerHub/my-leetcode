@@ -47,4 +47,4 @@ function toString(head) {
   return keys.join(' -> ');
 }
 
-module.exports = { toLinkedList, toString };
+module.exports = { toLinkedList, toString, ListNode };
