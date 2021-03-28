@@ -12,6 +12,7 @@ const { ListNode } = require('./../../util/linkedList/LinkedList');
  * }
  */
 /**
+ * 递归法
  * @param {ListNode} head
  * @return {ListNode}
  */
@@ -27,6 +28,7 @@ var reverseList = function (head) {
   return newHead;
 };
 
+// 头插法，创建一个反转的链表
 var reverseList2 = function (head) {
   var l = new ListNode(0, null);
 
