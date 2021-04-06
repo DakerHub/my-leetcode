@@ -13,7 +13,9 @@ const { mergeTwoLists } = require('./../1_100/21');
  *     this.next = (next===undefined ? null : next)
  * }
  */
+
 /**
+ * 分治，O(n * lg n)
  * @param {ListNode} head
  * @return {ListNode}
  */
