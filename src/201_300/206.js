@@ -43,4 +43,19 @@ var reverseList2 = function (head) {
   return l.next;
 };
 
-module.exports = { reverseList, reverseList2 };
+// 迭代法
+var reverseList3 = function (head) {
+  var l = new ListNode(0, head);
+
+  while (head && head.next) {
+    var tmp = head.next;
+    head.next = head.next.next;
+
+    tmp.next = l.next;
+    l.next = tmp;
+  }
+
+  return l.next;
+};
+
+module.exports = { reverseList, reverseList2, reverseList3 };
